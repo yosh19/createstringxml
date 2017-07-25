@@ -54,23 +54,24 @@ public class Excel {
 		    //Row row2 = sheet.createRow(2);
 		    //my_log.logger.setLevel(row2.);
 
-		    //Cell row2 = row1.getCell(1);
-		    //String shopName = row2.getStringCellValue();
-		    //System.out.println(shopName);
-		    
-		    for (int i = 0 ; i < 6 ; i++){
-			    Row row1 = sheet.getRow(1);
-		    		Cell cell = row1.getCell(i);
-			    String japanese = cell.getStringCellValue();
-			    System.out.println(japanese);
 
-		      }
-		    /*
 		    File file = new File("test9.txt");
-		    FileWriter filewriter = new FileWriter(file);               
-		    filewriter.write();
+		    FileWriter filewriter = new FileWriter(file);     
+			
+		    for (int i = 0 ; i < 6 ; i++){
+			    Row row1 = sheet.getRow(i);
+		    		Cell cell = row1.getCell(1);
+			    String japanese = cell.getStringCellValue();
+			    if(japanese != null) {
+			    		//System.out.println(japanese);
+				    filewriter.write(japanese+"\r\n");
+			    }
+		      }
+		    
+          
+		    //filewriter.write(japanese);
 		    filewriter.close();
-		    */
+		    
 		    /*
 
 //１行目("<?xml version=\"1.0\" encoding=\"utf-8\" ?>")
