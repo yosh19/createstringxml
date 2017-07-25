@@ -1,4 +1,5 @@
 //package Excel;
+import java.util.logging.*;
 
 import java.io.*;
 
@@ -20,32 +21,57 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
-
+import java.util.logging.Logger;
 
 
 public class Excel {
 
     public static void main(String[] args) throws IOException {
+    		//final Logger logger = Logger.getLogger( Logger.class.getName());
+    		//Log my_log = new Log("test.txt");
 
         // 変更元を取込
         FileInputStream in 
-            = new FileInputStream("test.xlsx");
+            = new FileInputStream("excel/string.xlsx");
 
         Workbook book = null;
         try {
-	    // 今回、WorkBookはWorkbookFactoryを使って作成します
-	    book = WorkbookFactory.create(in);
+        		// WorkBook作成
+        		book = WorkbookFactory.create(in);
+	
+		} catch (EncryptedDocumentException e1) {
+		    e1.printStackTrace();
+	
+		} catch (InvalidFormatException e1) {
+	   	    e1.printStackTrace();
+		}
+        
+  
+		    // 「list」シートを取得
+			Sheet sheet = book.getSheet("list");
+			
 
-	} catch (EncryptedDocumentException e1) {
-	    e1.printStackTrace();
+		    //Row row2 = sheet.createRow(2);
+		    //my_log.logger.setLevel(row2.);
 
-	} catch (InvalidFormatException e1) {
-   	    e1.printStackTrace();
-	}
+		    //Cell row2 = row1.getCell(1);
+		    //String shopName = row2.getStringCellValue();
+		    //System.out.println(shopName);
+		    
+		    for (int i = 0 ; i < 6 ; i++){
+			    Row row1 = sheet.getRow(1);
+		    		Cell cell = row1.getCell(i);
+			    String japanese = cell.getStringCellValue();
+			    System.out.println(japanese);
 
-// 「サンプル」という名前のシートを取得
-	Sheet sheet = book.getSheet("サンプル");
-
+		      }
+		    /*
+		    File file = new File("test9.txt");
+		    FileWriter filewriter = new FileWriter(file);               
+		    filewriter.write();
+		    filewriter.close();
+		    */
+		    /*
 
 //１行目("<?xml version=\"1.0\" encoding=\"utf-8\" ?>")
 	Row row1 = sheet.createRow(0);
@@ -84,61 +110,13 @@ public class Excel {
 		
 	}
 
-/*ここから	
-	for (int i = 0 ; i < last ; i++) {
-
-		//１行ずつ取得
-		Row row = sheet.getRow(i);
-		
-		//if(row != null) {
-			Cell a1 = row.getCell(1);
-		//}
-			//if(a1 != null) {
-	System.out.println(i);
-				Row row3 = sheet.createRow(0);
-			    Cell cellA3 = row3.createCell(0);
-			    cellA3.setCellValue("<resource123>"+ a1); 
-			//}
-		
-
-	}
-ここまで*/	
-	
-
-/*	
-	  for (var i=3; i<lastRow; i++){
-		    //C列取得
-		    var valueOfC = sheet.getRange(i,2).getValue(); 
-		    //D列取得
-		    var valueOfD = sheet.getRange(i,3).getValue();
-		    
-		    sheet3.getRange(i,1).setValue('<string name='+'\"'+valueOfC+'\"'+'>'+valueOfD+'</string>')
-
-		  }	
-*/	
-/*	
-//3列目	
-	for (int i = 0 ; i < 6 ; i++) {
-	
-	//１行ずつ取得
-	Row row = sheet.getRow(i);
-
-	//列
-	Cell a2 = row.getCell(2);    
-	
-	System.out.println(a2);	
-	a2.setCellValue(""+a2);
-	}	
 */
-
-
-	
-	
+/*
 	// ここから出力処理
 	FileOutputStream out = null;
 	try {
 	    // 出力先のファイルを指定
-	    out = new FileOutputStream("test8.xlsx");
+	    out = new FileOutputStream("test8.txt");
 	    // 上記で作成したブックを出力先に書き込み
 	    book.write(out);
 
@@ -150,23 +128,12 @@ public class Excel {
 	    out.close();
 	    book.close();
 	}
+*/
+	
     }
+
+    
 }
-
-//シートからデータ取得
-	//シート読み込み
-
-//コピー先のシート選択
-
-//最終行取得
-
-////1行目<?xml version="1.0" encoding="utf-8"?>
-
-//開始タグ
-
-//ループで単語部分を表示
-
-//閉じタグ
 
 
 
