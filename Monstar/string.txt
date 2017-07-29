@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="hello">こんにちは</string>
+<string name="goodnight">おやすみ</string>
+<string name="morning">おはよう</string>
+<string name="bye">さようなら</string>
+<string name="watch">時計</string>
+<string name="watch">時計</string>
+<string name="watch">時計</string>
+<string name="watch">時計</string>
+<string name="watch">時計</string>
+<string name="watch">時計</string>
+<string name="watch">時計</string>
+<string name="watch">時計</string>
+</resources>
