@@ -1,5 +1,14 @@
 # Mac
 .DS_Store
-
+/bin/
 *.bak
 /.metadata/
+
+
+/.git/
+/.gitignore/
+/.metadata/
+/.recommenders/
+
+.classpath
+.project
